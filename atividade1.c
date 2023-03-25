@@ -7,5 +7,8 @@ int main() {
     printf("Matricula %\n", numero);
     printf("Nome: Breno de Medeiros Paulo\n");
     printf("Matricula: 202206840034\n");
+    printf("Nome: Gabriela Melo Oliveira da Costa\n");
+    printf("Matricula: 202207040029\n");
+
     return 0;
 }
