@@ -5,83 +5,45 @@
 #include <time.h>
 #include <complex.h>
 #define N 3 
-//Matriz Transposta
-teste_trasposta(){
-	
-	void transpose(int mat1[N][N]) {
-    int transposed[N][N];
-    int i, j;
 
-    for (i = 0; i < N; i++) {
-        for (j = 0; j < N; j++) {
-            transposed[i][j] = mat1[j][i];
+//Matriz Transposta
+
+void teste_transposta(int *matrix) {
+    int temp;
+    int i,j;
+    for(i = 0; i < N; i++) {
+        for( j = i+1; j < N; j++) {
+            temp = *(matrix + i*N + j);  // Armazena o elemento a ser trocado
+            *(matrix + i*N + j) = *(matrix + j*N + i);  // Move o elemento da posição (j,i) para (i,j)
+            *(matrix + j*N + i) = temp;  // Move o elemento armazenado para a posição (j,i)
         }
     }
-
-    printf("Matriz transposta:\n");
-    for (i = 0; i < N; i++) {
-        for (j = 0; j < N; j++) {
-            printf("%d ", transposed[i][j]);
-        }
-        printf("\n");
-    	}
-	}
 }
+
 // Matriz Conjugada
 
-teste_conjugada(){
+void teste_conjugada(){
 	
-    void conjugade()
-	complex float matriz[N][N];
- 	int i, j;
-    // LÃª a matriz complexa do usuÃ¡rio
-    
-    
-    matriz[i][j] = real + imag*I;
-    // Calcula a matriz conjugada
-    complex float conjugada[N][N];
-    for ( i = 0; i < N; i++) {
-        for (j = 0; j < N; j++) {
-            conjugada[i][j] = conj(matriz[i][j]);
-        }
-    }
-
-    // Imprime as matrizes na tela
-    printf("\nMatriz complexa:\n");
-    for (i = 0; i < N; i++) {
-        for (j = 0; j < N; j++) {
-            printf("%.1f + %.1fi\t", creal(matriz[i][j]), cimag(matriz[i][j]));
-        }
-        printf("\n");
-    }
-
-    printf("\nMatriz conjugada:\n");
-    for (i = 0; i < N; i++) {
-        for (j = 0; j < N; j++) {
-            printf("%.1f%.1fi\t", creal(conjugada[i][j]), cimag(conjugada[i][j]));
-        }
-        printf("\n");
-    }
-
-    return 0;
 }
 // matriz hermitiana
-teste_hermitiana(){
+void teste_hermitiana(){
 	
 }
 
 // soma de matrizes 
-teste_soma(){
+void teste_soma(){
 }
 
 // subtração de matrizes
-teste_sub(){
+void teste_sub(){
 }
 // produto escalar
-teste_produto_escalar(){
+void teste_produto_escalar(){
+	
+	
 }
 // produto matricial
-teste_produto_matricial(){
+void teste_produto_matricial(){
 
 }
 // execução de todas as matrizes
@@ -92,33 +54,61 @@ teste_todos(){
 
 
 int main() {
-	int mat[N][N];
+	int matriz[N][N];
     int i, j;
     int escolha;
     printf("Digite os elementos da matriz 3x3:\n");
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 3; j++) {
             printf("Digite o elemento [%d][%d]: ", i, j);
-            scanf("%d", &mat[i][j]);
+            scanf("%d", &matriz[i][j]);
             }
         }
         
     printf("Escolha a manipulação matricial de 3x3 que deseja executar:\n");
     printf("1. matriz trasposta \n");
     printf("2. matriz conjugada \n");
-    printf("3. matriz hermitian \n");
+    printf("3. matriz hermitiana \n");
+    printf("4. soma de matrizes  \n");
+    printf("5. subtração de matrizes \n");
+    printf("6. produto escalar \n");
+    printf("7. produto matrcial \n");
+    printf("8. todas \n");
     printf("Escolha: ");
     scanf("%d", &escolha);
 
     switch (escolha) {
         case 1:
-            teste_trasposta();
-            break;
+        teste_transposta(&matriz[N][N]);
+	    printf("Matriz trasposta:\n");
+   		for( i = 0; i < N; i++) {
+        for(j = 0; j < N; j++) {
+            printf("%d ", matriz[j][i]);
+        }
+        printf("\n");
+    	}
+        break;
         case 2:
             teste_conjugada();
             break;
         case 3:
+            teste_hermitiana();
+            break;
+        case 4:
             teste_soma();
+            
+            break;
+        case 5:
+            teste_sub();
+            break;
+        case 6:
+        teste_produto_escalar();
+            break;
+        case 7:
+           teste_produto_matricial();
+            break;
+        case 8:
+           teste_todos();
             break;
         default:
             printf("Opção inválida!\n");
@@ -128,10 +118,11 @@ int main() {
 	printf("Matriz original:\n");
     for (i = 0; i < N; i++) {
         for (j = 0; j < N; j++) {
-            printf("%d ",mat[i][j]);
+            printf("%d ",matriz[i][j]);
         }
         printf("\n");
     }
+    return 0;
 }
 
 
