@@ -5,7 +5,16 @@
 #include <time.h>
 #include <complex.h>
 #define N 3 
-
+typedef struct {
+    double Re;
+    double Im;
+} complexo;
+complexo conjugado(complexo c) {
+    complexo resultado;
+    resultado.Re = c.Re;
+    resultado.Im = -c.Im; // troca o sinal da parte imagin√°ria
+    return resultado;
+}
 //Matriz Transposta
 
 void teste_transposta(int *matrix) {
@@ -14,8 +23,8 @@ void teste_transposta(int *matrix) {
     for(i = 0; i < N; i++) {
         for( j = i+1; j < N; j++) {
             temp = *(matrix + i*N + j);  // Armazena o elemento a ser trocado
-            *(matrix + i*N + j) = *(matrix + j*N + i);  // Move o elemento da posiÁ„o (j,i) para (i,j)
-            *(matrix + j*N + i) = temp;  // Move o elemento armazenado para a posiÁ„o (j,i)
+            *(matrix + i*N + j) = *(matrix + j*N + i);  // Move o elemento da posi√ß√£o (j,i) para (i,j)
+            *(matrix + j*N + i) = temp;  // Move o elemento armazenado para a posi√ß√£o (j,i)
         }
     }
 }
@@ -34,7 +43,7 @@ void teste_hermitiana(){
 void teste_soma(){
 }
 
-// subtraÁ„o de matrizes
+// subtra√ß√£o de matrizes
 void teste_sub(){
 }
 // produto escalar
@@ -46,7 +55,7 @@ void teste_produto_escalar(){
 void teste_produto_matricial(){
 
 }
-// execuÁ„o de todas as matrizes
+// execu√ß√£o de todas as matrizes
 teste_todos(){
 
 }
@@ -54,7 +63,7 @@ teste_todos(){
 
 
 int main() {
-	int matriz[N][N];
+    int matriz[N][N];
     int i, j;
     int escolha;
     printf("Digite os elementos da matriz 3x3:\n");
@@ -65,12 +74,12 @@ int main() {
             }
         }
         
-    printf("Escolha a manipulaÁ„o matricial de 3x3 que deseja executar:\n");
+    printf("Escolha a manipula√ß√£o matricial de 3x3 que deseja executar:\n");
     printf("1. matriz trasposta \n");
     printf("2. matriz conjugada \n");
     printf("3. matriz hermitiana \n");
     printf("4. soma de matrizes  \n");
-    printf("5. subtraÁ„o de matrizes \n");
+    printf("5. subtra√ß√£o de matrizes \n");
     printf("6. produto escalar \n");
     printf("7. produto matrcial \n");
     printf("8. todas \n");
@@ -111,7 +120,7 @@ int main() {
            teste_todos();
             break;
         default:
-            printf("OpÁ„o inv·lida!\n");
+            printf("Op√ß√£o inv√°lida!\n");
             break;
 }
 
