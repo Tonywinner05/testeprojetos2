@@ -1,29 +1,36 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <complex.h>
-#define N 3 
 
-//Matriz Transposta
+typedef struct {
+    double Re;
+    double Im;
+} Complex;
 
-void teste_transposta(int *matrix) {
-    int temp;
-    int i,j;
-    for(i = 0; i < N; i++) {
-        for( j = i+1; j < N; j++) {
-            temp = *(matrix + i*N + j);  // Armazena o elemento a ser trocado
-            *(matrix + i*N + j) = *(matrix + j*N + i);  // Move o elemento da posição (j,i) para (i,j)
-            *(matrix + j*N + i) = temp;  // Move o elemento armazenado para a posição (j,i)
-        }
+void impC(Complex c) {
+    printf("%.1f", c.Re);
+    if (c.Im >= 0) {
+        printf(" + %.1fi", c.Im);
+    } else {
+        printf(" - %.1fi", -c.Im);
     }
+}
+Complex conjugado(Complex c) {
+    Complex resultado;
+    resultado.Re = c.Re;
+    resultado.Im = -c.Im; // troca o sinal da parte imaginária
+    return resultado;
+}
+
+// Matriz Transposta
+void teste_transposta() {
+	
 }
 
 // Matriz Conjugada
-
-void teste_conjugada(){
-	
+void teste_conjugada() {
+    
 }
 // matriz hermitiana
 void teste_hermitiana(){
@@ -47,24 +54,33 @@ void teste_produto_matricial(){
 
 }
 // execução de todas as matrizes
-teste_todos(){
+void teste_todos(){
 
 }
 
 
 
 int main() {
-	int matriz[N][N];
-    int i, j;
     int escolha;
-    printf("Digite os elementos da matriz 3x3:\n");
-    for (i = 0; i < 3; i++) {
-        for (j = 0; j < 3; j++) {
-            printf("Digite o elemento [%d][%d]: ", i, j);
-            scanf("%d", &matriz[i][j]);
-            }
+    int L = 3;
+    int C = 3;
+	int i,j;
+    Complex *mat = (Complex *)malloc(L * C * sizeof(Complex));
+    
+    for ( i = 0; i < L; i++) {
+        for ( j = 0; j < C; j++) {
+            *(mat + i * C + j) = (Complex){i + j, i - j};
         }
-        
+    }
+    printf("Matriz dada 3x3 :\n");
+    for (i = 0; i < L; i++) {
+        for ( j = 0; j < C; j++) {
+            impC(mat[i * C + j]);
+            printf("\t");
+        }
+        printf("\n");
+    }   
+    printf("\n");
     printf("Escolha a manipulação matricial de 3x3 que deseja executar:\n");
     printf("1. matriz trasposta \n");
     printf("2. matriz conjugada \n");
@@ -78,52 +94,49 @@ int main() {
     scanf("%d", &escolha);
 
     switch (escolha) {
-        case 1:
-        teste_transposta(&matriz[N][N]);
-	    printf("Matriz trasposta:\n");
-   		for( i = 0; i < N; i++) {
-        for(j = 0; j < N; j++) {
-            printf("%d ", matriz[j][i]);
-        }
-        printf("\n");
-    	}
-        break;
-        case 2:
-            teste_conjugada();
-            break;
-        case 3:
-            teste_hermitiana();
-            break;
-        case 4:
-            teste_soma();
+    case 1:
+    	teste_transposta();
+    
+    break;
+    case 2:
+    	teste_conjugada();
+    
+    break;
+    case 3:
+        teste_hermitiana();
+    break;
+    case 4:
+        teste_soma();
             
-            break;
-        case 5:
-            teste_sub();
-            break;
-        case 6:
+    break;
+    case 5:
+        teste_sub();
+    break;
+    case 6:
         teste_produto_escalar();
-            break;
-        case 7:
+    break;
+    case 7:
            teste_produto_matricial();
-            break;
-        case 8:
+    break;
+    case 8:
            teste_todos();
-            break;
-        default:
-            printf("Opção inválida!\n");
-            break;
+    break;
+    default:
+    printf("Opção inválida!\n");
+    break;
 }
 
-	printf("Matriz original:\n");
-    for (i = 0; i < N; i++) {
-        for (j = 0; j < N; j++) {
-            printf("%d ",matriz[i][j]);
+printf("Matriz original :\n");
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < C; j++) {
+            impC(mat[i * C + j]);
+            printf("\t");
         }
         printf("\n");
-    }
-    return 0;
+    }   
+return 0;
 }
+
 
 
 
