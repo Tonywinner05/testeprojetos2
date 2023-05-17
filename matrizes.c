@@ -3,6 +3,7 @@
 #include <time.h>
 #include <complex.h>
 
+
 typedef struct {
     double Re;
     double Im;
@@ -14,7 +15,7 @@ void impC(Complex c) {
         printf(" + %.1fi", c.Im);
     } else {
         printf(" - %.1fi", -c.Im);
-    }
+}
 }
 Complex conjugado(Complex c) {
     Complex resultado;
@@ -22,7 +23,6 @@ Complex conjugado(Complex c) {
     resultado.Im = -c.Im; // troca o sinal da parte imaginária
     return resultado;
 }
-
 // Matriz Transposta
 void teste_transposta() {
 	
@@ -41,7 +41,7 @@ void teste_hermitiana(){
 void teste_soma(){
 }
 
-// subtração de matrizes
+// subtraÃ§Ã£o de matrizes
 void teste_sub(){
 }
 // produto escalar
@@ -53,24 +53,29 @@ void teste_produto_escalar(){
 void teste_produto_matricial(){
 
 }
+
 // execução de todas as matrizes
 void teste_todos(){
-
 }
+// execuÃ§Ã£o de todas as matrizes
+
 
 
 
 int main() {
+   
+    int i, j;
     int escolha;
     int L = 3;
     int C = 3;
-	int i,j;
+
     Complex *mat = (Complex *)malloc(L * C * sizeof(Complex));
     
     for ( i = 0; i < L; i++) {
         for ( j = 0; j < C; j++) {
             *(mat + i * C + j) = (Complex){i + j, i - j};
         }
+
     }
     printf("Matriz dada 3x3 :\n");
     for (i = 0; i < L; i++) {
@@ -86,7 +91,7 @@ int main() {
     printf("2. matriz conjugada \n");
     printf("3. matriz hermitiana \n");
     printf("4. soma de matrizes  \n");
-    printf("5. subtração de matrizes \n");
+    printf("5. subtraÃ§Ã£o de matrizes \n");
     printf("6. produto escalar \n");
     printf("7. produto matrcial \n");
     printf("8. todas \n");
@@ -120,10 +125,12 @@ int main() {
     break;
     case 8:
            teste_todos();
+
     break;
     default:
     printf("Opção inválida!\n");
     break;
+        
 }
 
 printf("Matriz original :\n");
