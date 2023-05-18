@@ -20,11 +20,18 @@ void impC(Complex c) {
 Complex conjugado(Complex c) {
     Complex resultado;
     resultado.Re = c.Re;
-    resultado.Im = -c.Im; // troca o sinal da parte imagin·ria
+    resultado.Im = -c.Im; // troca o sinal da parte imagin√°ria
     return resultado;
 }
 // Matriz Transposta
-void teste_transposta() {
+void teste_transposta(Complex *mat, int L, int C) {
+	int i,j;
+	for (int i = 0; i < L; i++) {
+        for (int j = i + 1; j < C; j++) {
+            Complex temp = *(mat + i * C + j);
+            *(mat + i * C + j) = *(mat + j * C + i);
+            *(mat + j * C + i) = temp;
+        }
 	
 }
 
@@ -54,10 +61,10 @@ void teste_produto_matricial(){
 
 }
 
-// execuÁ„o de todas as matrizes
+// execu√ß√£o de todas as matrizes
 void teste_todos(){
 }
-// execu√ß√£o de todas as matrizes
+// execu√É¬ß√É¬£o de todas as matrizes
 
 
 
@@ -86,7 +93,7 @@ int main() {
         printf("\n");
     }   
     printf("\n");
-    printf("Escolha a manipulaÁ„o matricial de 3x3 que deseja executar:\n");
+    printf("Escolha a manipula√ß√£o matricial de 3x3 que deseja executar:\n");
     printf("1. matriz trasposta \n");
     printf("2. matriz conjugada \n");
     printf("3. matriz hermitiana \n");
@@ -100,7 +107,17 @@ int main() {
 
     switch (escolha) {
     case 1:
-    	teste_transposta();
+    	teste_transposta(mat, L, C);
+		     printf("\nMatriz transposta:\n");
+    for (int i = 0; i < C; i++) {
+        for (int j = 0; j < L; j++) {
+            impC(mat[i * C + j]);
+            printf("\t");
+        }
+        printf("\n");
+    }
+    //
+    free(mat);
     
     break;
     case 2:
@@ -128,7 +145,7 @@ int main() {
 
     break;
     default:
-    printf("OpÁ„o inv·lida!\n");
+    printf("Op√ß√£o inv√°lida!\n");
     break;
         
 }
