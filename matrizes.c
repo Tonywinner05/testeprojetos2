@@ -74,8 +74,6 @@ void printComplexMatrix(Complex **matrix, int A, int B) {
         printf("\n");
     }
 }
-
-int main() {
     int A, B;
     printf("Digite o n�mero de linhas e colunas das matrizes: ");
     scanf("%d%d", &A, &B);
@@ -151,8 +149,6 @@ void printComplexMatrix(Complex **matrix, int A, int B) {
         printf("\n");
     }
 }
-
-int main() {
     int A, B;
     printf("Digite o n�mero de linhas e colunas das matrizes: ");
     scanf("%d%d", &A, &B);
@@ -288,12 +284,33 @@ int main() {
         teste_hermitiana();
     break;
     case 4:
-        teste_soma();
+        teste_soma(mat, L, C);
+        printf("\nMatriz Soma:\n");
+        for (i = 0; i < L; i++) {
+            for (j = 0; j < C; j++) {
+                impC(mat[i * C + j]);
+                printf("\t");
+        }
+        printf("\n");
+    }
+    free(mat);
             
     break;
+    
     case 5:
-        teste_sub();
+        teste_sub(mat, L, C);
+        printf("\nMatriz Subtração:\n");
+        for (i = 0; i < L; i++) {
+            for (j = 0; j < C; j++) {
+                impC(mat[i * C + j]);
+                printf("\t");
+        }
+        printf("\n");
+    }
+    free(mat);
+
     break;
+
     case 6:
         teste_produto_escalar();
     break;
