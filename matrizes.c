@@ -50,11 +50,6 @@ void teste_hermitiana(){
 }
 
 // soma de matrizes 
-typedef struct {
-    double Re;
-    double Im;
-} Complex;
-
 void addComplexMatrices(Complex **matrix1, Complex **matrix2, Complex **result, int A, int B) {
     int i, j;
     for (i = 0; i < A; i++) {
@@ -64,51 +59,13 @@ void addComplexMatrices(Complex **matrix1, Complex **matrix2, Complex **result, 
         }
     }
 }
-
-void printComplexMatrix(Complex **matrix, int A, int B) {
-    int i, j;
-    for (i = 0; i < A; i++) {
-        for (j = 0; j < B; j++) {
-            printf("%.2f + %.2fi\t", matrix[i][j].Re, matrix[i][j].Im);
+    printf("Matriz dada 3x3 :\n"); //Gera a matriz 3x3
+    for (i = 0; i < L; i++) {
+        for ( j = 0; j < C; j++) {
+            impC(mat[i * C + j]);
+            printf("\t");
         }
         printf("\n");
-    }
-}
-    int A, B;
-    printf("Digite o n�mero de linhas e colunas das matrizes: ");
-    scanf("%d%d", &A, &B);
-
-    // Aloca espa�o para as matrizes
-    Complex **matrix1 = (Complex **)malloc(A * sizeof(Complex *));
-    Complex **matrix2 = (Complex **)malloc(A * sizeof(Complex *));
-    Complex **result = (Complex **)malloc(A * sizeof(Complex *));
-    int i, j;
-    for (i = 0; i < A; i++) {
-        matrix1[i] = (Complex *)malloc(B * sizeof(Complex));
-        matrix2[i] = (Complex *)malloc(B * sizeof(Complex));
-        result[i] = (Complex *)malloc(B * sizeof(Complex));
-    }
-
-    printf("Digite os elementos da primeira matriz:\n");
-    for (i = 0; i < A; i++) {
-        for (j = 0; j < B; j++) {
-            printf("Elemento (%d, %d): ", i + 1, j + 1);
-            scanf("%lf%lf", &matrix1[i][j].Re, &matrix1[i][j].Im);
-        }
-    }
-
-    printf("Digite os elementos da segunda matriz:\n");
-    for (i = 0; i < A; i++) {
-        for (j = 0; j < B; j++) {
-            printf("Elemento (%d, %d): ", i + 1, j + 1);
-            scanf("%lf%lf", &matrix2[i][j].Re, &matrix2[i][j].Im);
-        }
-    }
-
-    addComplexMatrices(matrix1, matrix2, result, A, B);
-
-    printf("\nMatriz Resultante:\n");
-    printComplexMatrix(result, A, B);
 
     // Libera a mem�ria alocada
     for (i = 0; i < A; i++) {
@@ -125,11 +82,6 @@ void printComplexMatrix(Complex **matrix, int A, int B) {
 
 
 // subtração de matrizes
-typedef struct {
-    double Re;
-    double Im;
-} Complex;
-
 void addComplexMatrices(Complex **matrix1, Complex **matrix2, Complex **result, int A, int B) {
     int i, j;
     for (i = 0; i < A; i++) {
@@ -139,51 +91,13 @@ void addComplexMatrices(Complex **matrix1, Complex **matrix2, Complex **result, 
         }
     }
 }
-
-void printComplexMatrix(Complex **matrix, int A, int B) {
-    int i, j;
-    for (i = 0; i < A; i++) {
-        for (j = 0; j < B; j++) {
-            printf("%.2f + %.2fi\t", matrix[i][j].Re, matrix[i][j].Im);
+ printf("Matriz dada 3x3 :\n"); //Gera a matriz 3x3
+    for (i = 0; i < L; i++) {
+        for ( j = 0; j < C; j++) {
+            impC(mat[i * C + j]);
+            printf("\t");
         }
         printf("\n");
-    }
-}
-    int A, B;
-    printf("Digite o n�mero de linhas e colunas das matrizes: ");
-    scanf("%d%d", &A, &B);
-
-    // Aloca espa�o para as matrizes
-    Complex **matrix1 = (Complex **)malloc(A * sizeof(Complex *));
-    Complex **matrix2 = (Complex **)malloc(A * sizeof(Complex *));
-    Complex **result = (Complex **)malloc(A * sizeof(Complex *));
-    int i, j;
-    for (i = 0; i < A; i++) {
-        matrix1[i] = (Complex *)malloc(B * sizeof(Complex));
-        matrix2[i] = (Complex *)malloc(B * sizeof(Complex));
-        result[i] = (Complex *)malloc(B * sizeof(Complex));
-    }
-
-    printf("Digite os elementos da primeira matriz:\n");
-    for (i = 0; i < A; i++) {
-        for (j = 0; j < B; j++) {
-            printf("Elemento (%d, %d): ", i + 1, j + 1);
-            scanf("%lf%lf", &matrix1[i][j].Re, &matrix1[i][j].Im);
-        }
-    }
-
-    printf("Digite os elementos da segunda matriz:\n");
-    for (i = 0; i < A; i++) {
-        for (j = 0; j < B; j++) {
-            printf("Elemento (%d, %d): ", i + 1, j + 1);
-            scanf("%lf%lf", &matrix2[i][j].Re, &matrix2[i][j].Im);
-        }
-    }
-
-    addComplexMatrices(matrix1, matrix2, result, A, B);
-
-    printf("\nMatriz Resultante:\n");
-    printComplexMatrix(result, A, B);
 
     // Libera a mem�ria alocada
     for (i = 0; i < A; i++) {
