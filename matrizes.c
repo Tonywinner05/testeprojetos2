@@ -26,18 +26,23 @@ Complex conjugado(Complex c) {
 // Matriz Transposta
 void teste_transposta(Complex *mat, int L, int C) {
 	int i,j;
-	for (int i = 0; i < L; i++) {
-        for (int j = i + 1; j < C; j++) {
+	for ( i = 0; i < L; i++) {
+        for ( j = i + 1; j < C; j++) {
             Complex temp = *(mat + i * C + j);
             *(mat + i * C + j) = *(mat + j * C + i);
             *(mat + j * C + i) = temp;
         }
 	
 }
-
+}
 // Matriz Conjugada
-void teste_conjugada() {
-    
+void teste_conjugada(Complex *mat, int L, int C) {
+    int i, j;
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < C; j++) {
+            mat[i * C + j] = conjugado(mat[i * C + j]);
+        }
+    }
 }
 // matriz hermitiana
 void teste_hermitiana(){
@@ -64,7 +69,7 @@ void teste_produto_matricial(){
 // execução de todas as matrizes
 void teste_todos(){
 }
-// execuÃ§Ã£o de todas as matrizes
+
 
 
 
@@ -109,8 +114,8 @@ int main() {
     case 1:
     	teste_transposta(mat, L, C);
 		     printf("\nMatriz transposta:\n");
-    for (int i = 0; i < C; i++) {
-        for (int j = 0; j < L; j++) {
+    for ( i = 0; i < C; i++) {
+        for ( j = 0; j < L; j++) {
             impC(mat[i * C + j]);
             printf("\t");
         }
@@ -120,10 +125,20 @@ int main() {
     free(mat);
     
     break;
-    case 2:
-    	teste_conjugada();
-    
+   case 2:
+    teste_conjugada(mat, L, C);
+    printf("\nMatriz conjugada:\n");
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < C; j++) {
+            impC(mat[i * C + j]);
+            printf("\t");
+        }
+        printf("\n");
+    }
+    free(mat);
+          
     break;
+    
     case 3:
         teste_hermitiana();
     break;
@@ -157,8 +172,10 @@ printf("Matriz original :\n");
             printf("\t");
         }
         printf("\n");
-    }   
+    }      
+    
 return 0;
+
 }
 
 
