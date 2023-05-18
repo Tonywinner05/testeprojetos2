@@ -9,6 +9,8 @@ int main() {
     printf("Matricula: 202206840034\n");
     printf("Nome: Gabriela Melo Oliveira da Costa\n");
     printf("Matricula: 202207040029\n");
+    printf("Nome: Leonardo da Silva Pinheiro\n ");
+    printf("Matrícula: 202206840040\n");
 
     return 0;
 }
