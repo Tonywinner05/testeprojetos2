@@ -32,7 +32,7 @@ void teste_transposta(Complex *mat, int L, int C) {
             *(mat + i * C + j) = *(mat + j * C + i);
             *(mat + j * C + i) = temp;
         }
-	
+
 }
 }
 // Matriz Conjugada
@@ -46,11 +46,11 @@ void teste_conjugada(Complex *mat, int L, int C) {
 }
 // matriz hermitiana
 void teste_hermitiana(){
-	
+
 }
 
-// soma de matrizes 
-void addComplexMatrices(Complex **matrix1, Complex **matrix2, Complex **result, int A, int B) {
+// soma de matrizes
+void addComplexMatrices(Complex *matrix1, Complex *matrix2, Complex **result, int A, int B) {
     int i, j;
     for (i = 0; i < A; i++) {
         for (j = 0; j < B; j++) {
@@ -59,30 +59,11 @@ void addComplexMatrices(Complex **matrix1, Complex **matrix2, Complex **result, 
         }
     }
 }
-    printf("Matriz dada 3x3 :\n"); //Gera a matriz 3x3
-    for (i = 0; i < L; i++) {
-        for ( j = 0; j < C; j++) {
-            impC(mat[i * C + j]);
-            printf("\t");
-        }
-        printf("\n");
 
-    // Libera a mem�ria alocada
-    for (i = 0; i < A; i++) {
-        free(matrix1[i]);
-        free(matrix2[i]);
-        free(result[i]);
-    }
-    free(matrix1);
-    free(matrix2);
-    free(result);
-
-    return 0;
-}
 
 
 // subtração de matrizes
-void addComplexMatrices(Complex **matrix1, Complex **matrix2, Complex **result, int A, int B) {
+void addComplexMatrices(Complex *matrix1, Complex *matrix2, Complex **result, int A, int B) {
     int i, j;
     for (i = 0; i < A; i++) {
         for (j = 0; j < B; j++) {
@@ -91,30 +72,12 @@ void addComplexMatrices(Complex **matrix1, Complex **matrix2, Complex **result, 
         }
     }
 }
- printf("Matriz dada 3x3 :\n"); //Gera a matriz 3x3
-    for (i = 0; i < L; i++) {
-        for ( j = 0; j < C; j++) {
-            impC(mat[i * C + j]);
-            printf("\t");
-        }
-        printf("\n");
 
-    // Libera a mem�ria alocada
-    for (i = 0; i < A; i++) {
-        free(matrix1[i]);
-        free(matrix2[i]);
-        free(result[i]);
-    }
-    free(matrix1);
-    free(matrix2);
-    free(result);
 
-    return 0;
-}
 // produto escalar
 void teste_produto_escalar(){
-	
-	
+
+
 }
 // produto matricial
 void teste_produto_matricial(){
@@ -130,17 +93,19 @@ void teste_todos(){
 
 
 int main() {
-   
+
     int i, j;
     int escolha;
     int L = 3;
     int C = 3;
 
     Complex *mat = (Complex *)malloc(L * C * sizeof(Complex));
-    
+    Complex *mat2 = (Complex *)malloc(L * C * sizeof(Complex));
+    Complex **result = (Complex *)malloc(L * C * sizeof(Complex));
     for ( i = 0; i < L; i++) {
         for ( j = 0; j < C; j++) {
             *(mat + i * C + j) = (Complex){i + j, i - j};
+            *(mat2 + i * C + j) = (Complex){i + j, i - j};
         }
 
     }
@@ -151,7 +116,7 @@ int main() {
             printf("\t");
         }
         printf("\n");
-    }   
+    }
     printf("\n");
     printf("Escolha a manipulação matricial de 3x3 que deseja executar:\n");
     printf("1. matriz trasposta \n");
@@ -178,7 +143,7 @@ int main() {
     }
     //
     free(mat);
-    
+
     break;
    case 2:
     teste_conjugada(mat, L, C);
@@ -191,9 +156,9 @@ int main() {
         printf("\n");
     }
     free(mat);
-          
+
     break;
-    
+
     case 3:
         teste_hermitiana();
     break;
@@ -208,9 +173,9 @@ int main() {
         printf("\n");
     }
     free(mat);
-            
+
     break;
-    
+
     case 5:
         teste_sub(mat, L, C);
         printf("\nMatriz Subtração:\n");
@@ -238,7 +203,7 @@ int main() {
     default:
     printf("Opção inválida!\n");
     break;
-        
+
 }
 
 printf("Matriz original :\n");
@@ -248,8 +213,8 @@ printf("Matriz original :\n");
             printf("\t");
         }
         printf("\n");
-    }      
-    
+    }
+
 return 0;
 
 }
