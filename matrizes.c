@@ -9,14 +9,23 @@ typedef struct {
     double Im;
 } Complex;
 
-void impC(Complex c) {
+void impC(Complex c){
     printf("%.1f", c.Re);
     if (c.Im >= 0) {
         printf(" + %.1fi", c.Im);
     } else {
         printf(" - %.1fi", -c.Im);
+    }
 }
-}
+void printComplexMatrix(Complex *matrix, int L, int C) {
+    int i, j;
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < C; j++) {
+            impC(matrix[i * C + j]);
+            printf("\t");
+        }
+        printf("\n");
+    }}// Função para imprimir uma matriz complexa
 Complex conjugado(Complex c) {
     Complex resultado;
     resultado.Re = c.Re;
@@ -32,8 +41,7 @@ void teste_transposta(Complex *mat, int L, int C) {
             *(mat + i * C + j) = *(mat + j * C + i);
             *(mat + j * C + i) = temp;
         }
-
-}
+    }
 }
 // Matriz Conjugada
 void teste_conjugada(Complex *mat, int L, int C) {
@@ -50,23 +58,21 @@ void teste_hermitiana(){
 }
 
 // soma de matrizes
-void addComplexMatrices(Complex *matrix1, Complex *matrix2, Complex **result, int A, int B) {
+void addComplexMatrices(Complex *matrix1, Complex *matrix2, Complex *result, int L, int C) {
     int i, j;
-    for (i = 0; i < A; i++) {
-        for (j = 0; j < B; j++) {
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < C; j++) {
             result[i][j].Re = matrix1[i][j].Re + matrix2[i][j].Re; //Realiza a Soma da parte Real
             result[i][j].Im = matrix1[i][j].Im + matrix2[i][j].Im; //Realiza a Soma da parte imaginaria
         }
     }
 }
 
-
-
 // subtração de matrizes
-void addComplexMatrices(Complex *matrix1, Complex *matrix2, Complex **result, int A, int B) {
+void subComplexMatrices(Complex *matrix1, Complex *matrix2, Complex *result, int L, int C) {
     int i, j;
-    for (i = 0; i < A; i++) {
-        for (j = 0; j < B; j++) {
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < C; j++) {
             result[i][j].Re = matrix1[i][j].Re - matrix2[i][j].Re; //Realiza a Subtra��o da parte Real
             result[i][j].Im = matrix1[i][j].Im - matrix2[i][j].Im; //Realiza a Subtra��o da parte imaginaria
         }
@@ -75,87 +81,66 @@ void addComplexMatrices(Complex *matrix1, Complex *matrix2, Complex **result, in
 
 
 // produto escalar
-void teste_produto_escalar(){
-
+void  teste_produto_escalar(Complex* mat, Complex* mat2, int L, int C, Complex* resultado) {
 
 }
 // produto matricial
 void teste_produto_matricial(){
 
-}
 
+}
 // execução de todas as matrizes
 void teste_todos(){
 }
 
-
-
-
-
 int main() {
+int i, j;
+int escolha;
+int L = 3;
+int C = 3;
 
-    int i, j;
-    int escolha;
-    int L = 3;
-    int C = 3;
-
-    Complex *mat = (Complex *)malloc(L * C * sizeof(Complex));
-    Complex *mat2 = (Complex *)malloc(L * C * sizeof(Complex));
-    Complex **result = (Complex *)malloc(L * C * sizeof(Complex));
+Complex *mat = (Complex *)malloc(L * C * sizeof(Complex));
+Complex *mat2 = (Complex *)malloc(L * C * sizeof(Complex));
     for ( i = 0; i < L; i++) {
         for ( j = 0; j < C; j++) {
             *(mat + i * C + j) = (Complex){i + j, i - j};
-            *(mat2 + i * C + j) = (Complex){i + j, i - j};
-        }
+            *(mat2 + i * C + j) = (Complex){i - j, i + j};
+        }}
 
-    }
-    printf("Matriz dada 3x3 :\n");
+printf("Matriz original 3x3 :\n");
     for (i = 0; i < L; i++) {
         for ( j = 0; j < C; j++) {
             impC(mat[i * C + j]);
             printf("\t");
         }
-        printf("\n");
-    }
+        printf("\n");}
     printf("\n");
     printf("Escolha a manipulação matricial de 3x3 que deseja executar:\n");
-    printf("1. matriz trasposta \n");
-    printf("2. matriz conjugada \n");
-    printf("3. matriz hermitiana \n");
-    printf("4. soma de matrizes  \n");
-    printf("5. subtração de matrizes \n");
-    printf("6. produto escalar \n");
-    printf("7. produto matrcial \n");
-    printf("8. todas \n");
+    printf("1. Matriz trasposta \n");
+    printf("2. Matriz conjugada \n");
+    printf("3. Matriz hermitiana \n");
+    printf("4. Soma de matrizes  \n");
+    printf("5. Subtração de matrizes \n");
+    printf("6. Produto escalar \n");
+    printf("7. Produto matricial \n");
+    printf("8. Todas \n");
     printf("Escolha: ");
     scanf("%d", &escolha);
 
-    switch (escolha) {
+switch (escolha){
     case 1:
-    	teste_transposta(mat, L, C);
-		     printf("\nMatriz transposta:\n");
-    for ( i = 0; i < C; i++) {
-        for ( j = 0; j < L; j++) {
-            impC(mat[i * C + j]);
-            printf("\t");
-        }
-        printf("\n");
-    }
-    //
-    free(mat);
+    teste_transposta(mat, L, C);
+            printf("\nMatriz transposta:\n");
+            printComplexMatrix(mat, C, L);
+            free(mat);
+            break;
 
-    break;
-   case 2:
+
+    case 2:
     teste_conjugada(mat, L, C);
-    printf("\nMatriz conjugada:\n");
-    for (i = 0; i < L; i++) {
-        for (j = 0; j < C; j++) {
-            impC(mat[i * C + j]);
-            printf("\t");
-        }
-        printf("\n");
-    }
-    free(mat);
+            printf("\nMatriz conjugada:\n");
+            printComplexMatrix(mat, L, C);
+            free(mat);
 
     break;
 
@@ -191,15 +176,18 @@ int main() {
     break;
 
     case 6:
-        teste_produto_escalar();
-    break;
-    case 7:
-           teste_produto_matricial();
-    break;
-    case 8:
-           teste_todos();
+    teste_produto_escalar()
 
     break;
+    case 7:
+    teste_produto_matricial();
+
+    break;
+    case 8:
+    teste_todos();
+
+    break;
+
     default:
     printf("Opção inválida!\n");
     break;
