@@ -17,6 +17,7 @@ void impC(Complex c){
         printf(" - %.1fi", -c.Im);
     }
 }
+// função para imprimir a matriz
 void printComplexMatrix(Complex *matrix, int L, int C) {
     int i, j;
     for (i = 0; i < L; i++) {
@@ -98,6 +99,7 @@ void teste_produto_escalar(Complex *mat, Complex *mat2, int L, int C, Complex *r
         }
     }
 }
+// produto matricial
 void produtoMatricial(Complex *mat1, Complex *mat2, Complex *result, int L, int C) {
     int i, j, k;
     for (i = 0; i < L; i++) {
