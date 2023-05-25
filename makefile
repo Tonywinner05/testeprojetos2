@@ -1,13 +1,13 @@
 all: teste
 
-teste: main.o matrizes.o
-	gcc main.o matrizes.o -o teste
+teste: build/main.o matrizes.o
+	gcc build/main.o matrizes.o -o teste
 
 main.o: main.c
-	gcc -c main.c -o main.o
+	gcc -c src/main.c -o build/main.o
 
 matrizes.o: matrizes.c
-	gcc -c matrizes.c -o matrizes.o
+	gcc -c src/matrizes.c -o build/matrizes.o
 
 
 clean:
