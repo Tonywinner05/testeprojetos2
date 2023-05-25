@@ -1,0 +1,833 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green128\blue0;\red96\green64\blue32;\rede0\green128\blue0;\red128\green0\blue0;\red128\green96\blue32;\red0\green32\blue128;\red0\green128\blue128;\red255\green0\blue255;\red0\green0\blue0;\red112\green0\blue112;\red255\green0\blue0;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext50 Code Example 9;}
+{\s50\li3600\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext51 Code Example 10;}
+{\s51\li3960\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext52 Code Example 11;}
+{\s52\li4320\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 12;}
+{\s53\li4680\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 13;}
+{\s60\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext61 List Continue 0;}
+{\s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext62 List Continue 1;}
+{\s62\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext63 List Continue 2;}
+{\s63\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext64 List Continue 3;}
+{\s64\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext65 List Continue 4;}
+{\s65\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext66 List Continue 5;}
+{\s66\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext67 List Continue 6;}
+{\s67\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext68 List Continue 7;}
+{\s68\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext69 List Continue 8;}
+{\s69\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext70 List Continue 9;}
+{\s70\li3600\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext71 List Continue 10;}
+{\s71\li3960\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext72 List Continue 11;}
+{\s72\li4320\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 12;}
+{\s73\li4680\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 13;}
+{\s80\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext81 DescContinue 0;}
+{\s81\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext82 DescContinue 1;}
+{\s82\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext83 DescContinue 2;}
+{\s83\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext84 DescContinue 3;}
+{\s84\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext85 DescContinue 4;}
+{\s85\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext86 DescContinue 5;}
+{\s86\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext87 DescContinue 6;}
+{\s87\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext88 DescContinue 7;}
+{\s88\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext89 DescContinue 8;}
+{\s89\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext90 DescContinue 9;}
+{\s90\li3600\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext91 DescContinue 10;}
+{\s91\li3960\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext92 DescContinue 11;}
+{\s92\li4320\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 12;}
+{\s93\li4680\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 13;}
+{\s100\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext101 LatexTOC 0;}
+{\s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext102 LatexTOC 1;}
+{\s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext103 LatexTOC 2;}
+{\s103\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext104 LatexTOC 3;}
+{\s104\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext105 LatexTOC 4;}
+{\s105\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext106 LatexTOC 5;}
+{\s106\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext107 LatexTOC 6;}
+{\s107\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext108 LatexTOC 7;}
+{\s108\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext109 LatexTOC 8;}
+{\s109\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext110 LatexTOC 9;}
+{\s110\li3600\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext111 LatexTOC 10;}
+{\s111\li3960\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext112 LatexTOC 11;}
+{\s112\li4320\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 12;}
+{\s113\li4680\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 13;}
+{\s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext121 \sautoupd List Bullet 0;}
+{\s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext122 \sautoupd List Bullet 1;}
+{\s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext123 \sautoupd List Bullet 2;}
+{\s123\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext124 \sautoupd List Bullet 3;}
+{\s124\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext125 \sautoupd List Bullet 4;}
+{\s125\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext126 \sautoupd List Bullet 5;}
+{\s126\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext127 \sautoupd List Bullet 6;}
+{\s127\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext128 \sautoupd List Bullet 7;}
+{\s128\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext129 \sautoupd List Bullet 8;}
+{\s129\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext130 \sautoupd List Bullet 9;}
+{\s130\fi-360\li3960\widctlpar\jclisttab\tx3960{\*\pn \pnlvlbody\ilvl0\ls11\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext131 \sautoupd List Bullet 10;}
+{\s131\fi-360\li4320\widctlpar\jclisttab\tx4320{\*\pn \pnlvlbody\ilvl0\ls12\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext132 \sautoupd List Bullet 11;}
+{\s132\fi-360\li4680\widctlpar\jclisttab\tx4680{\*\pn \pnlvlbody\ilvl0\ls13\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 12;}
+{\s133\fi-360\li5040\widctlpar\jclisttab\tx5040{\*\pn \pnlvlbody\ilvl0\ls14\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 13;}
+{\s140\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext141 \sautoupd List Enum 0;}
+{\s141\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext142 \sautoupd List Enum 1;}
+{\s142\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext143 \sautoupd List Enum 2;}
+{\s143\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext144 \sautoupd List Enum 3;}
+{\s144\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext145 \sautoupd List Enum 4;}
+{\s145\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext146 \sautoupd List Enum 5;}
+{\s146\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext147 \sautoupd List Enum 6;}
+{\s147\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext148 \sautoupd List Enum 7;}
+{\s148\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext149 \sautoupd List Enum 8;}
+{\s149\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext150 \sautoupd List Enum 9;}
+{\s150\fi-360\li3960\widctlpar\fs20\cgrid \sbasedon0 \snext151 \sautoupd List Enum 10;}
+{\s151\fi-360\li4320\widctlpar\fs20\cgrid \sbasedon0 \snext152 \sautoupd List Enum 11;}
+{\s152\fi-360\li4680\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 12;}
+{\s153\fi-360\li5040\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 13;}
+}
+{\info 
+{\title {\comment testedoxygen  {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+1.0 \par
+}}testedoxygen}
+{\comment Gerado por doxygen 1.9.7.}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt testedoxygen}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Vers\'E3o 1.0\par\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Sum\'E1rio\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\par \pard\plain 
+\par \pard\plain 
+\pard\plain \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+testeprojetos2\par \pard\plain 
+{\tc\tcl1 \v testeprojetos2}
+{\xe \v testeprojetos2}
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+dia 17/05/2023 fizemos um reajuste na equipe para incluir um novo membro \par
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'CDndice das Estruturas de Dados\par \pard\plain 
+{\tc \v \'CDndice das Estruturas de Dados}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Estruturas de Dados\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Aqui est\'E3o as estruturas de dados, uni\'F5es e suas respectivas descri\'E7\'F5es:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b Complex} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAV \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\'CDndice dos Arquivos\par \pard\plain 
+{\tc \v \'CDndice dos Arquivos}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Lista de Arquivos\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Esta \'E9 a lista de todos os arquivos e suas respectivas descri\'E7\'F5es:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b C:/Users/leona/OneDrive/Documentos/testeprojetos2/{\b atividade1.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b C:/Users/leona/OneDrive/Documentos/testeprojetos2/{\b main.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAD \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b C:/Users/leona/OneDrive/Documentos/testeprojetos2/{\b matrizes.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b C:/Users/leona/OneDrive/Documentos/testeprojetos2/{\b matrizes.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAR \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Estruturas{\tc \v Estruturas}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia da Estrutura Complex\par \pard\plain 
+{\tc\tcl2 \v Complex}
+{\xe \v Complex}
+{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Campos de Dados\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+double {\b Re}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+double {\b Im}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Campos\par
+\pard\plain 
+{\xe \v Im\:Complex}
+{\xe \v Complex\:Im}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+double Im}}
+\par
+{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v Re\:Complex}
+{\xe \v Complex\:Re}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+double Re}}
+\par
+{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+A documenta\'E7\'E3o para essa estrutura foi gerada a partir do seguinte arquivo:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+C:/Users/leona/OneDrive/Documentos/testeprojetos2/{\b matrizes.c}\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Arquivos{\tc \v Arquivos}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia do Arquivo C:/Users/leona/OneDrive/Documentos/testeprojetos2/atividade1.c\par \pard\plain 
+{\tc\tcl2 \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/atividade1.c}
+{\xe \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/atividade1.c}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <stdio.h>}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Fun\'E7\'F5es\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Fun\'E7\'F5es\par
+\pard\plain 
+{\xe \v main\:atividade1.c}
+{\xe \v atividade1.c\:main}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main ()}}
+\par
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 3            \{\par
+4     {\cf18 char} nome[] = {\cf22 "Antonio Maria Gomes Junior"};\par
+5     {\cf18 int} numero = 202206840046;\par
+6     printf({\cf22 "Aluno %\\n"}, nome);\par
+7     printf({\cf22 "Matricula %\\n"}, numero);\par
+8     printf({\cf22 "Nome: Breno de Medeiros Paulo\\n"});\par
+9     printf({\cf22 "Matricula: 202206840034\\n"});\par
+10     printf({\cf22 "Nome: Gabriela Melo Oliveira da Costa\\n"});\par
+11     printf({\cf22 "Matricula: 202207040029\\n"});\par
+12     printf({\cf22 "Nome: Leonardo da Silva Pinheiro\\n "});\par
+13     printf({\cf22 "Matr\'EDcula: 202206840040\\n"});\par
+14 \par
+15     {\cf19 return} 0;\par
+16 \}\par
+}
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia do Arquivo C:/Users/leona/OneDrive/Documentos/testeprojetos2/main.c\par \pard\plain 
+{\tc\tcl2 \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/main.c}
+{\xe \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/main.c}
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia do Arquivo C:/Users/leona/OneDrive/Documentos/testeprojetos2/matrizes.c\par \pard\plain 
+{\tc\tcl2 \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/matrizes.c}
+{\xe \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/matrizes.c}
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <stdio.h>}\par
+{\f2 #include <stdlib.h>}\par
+{\f2 #include <time.h>}\par
+{\f2 #include <complex.h>}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Estruturas de Dados\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+struct {\b Complex}}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Fun\'E7\'F5es\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b impC} ({\b Complex} c)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b printComplexMatrix} ({\b Complex} *matrix, int L, int C)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Complex} {\b conjugado} ({\b Complex} c)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b teste_transposta} ({\b Complex} *mat, int L, int C)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b teste_conjugada} ({\b Complex} *mat, int L, int C)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b teste_hermitiana} ({\b Complex} *mat, {\b Complex} *result, int L, int C)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b teste_soma} ({\b Complex} *mat, {\b Complex} *mat2, {\b Complex} *result, int L, int C)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b teste_subtracao} ({\b Complex} *mat, {\b Complex} *mat2, {\b Complex} *result, int L, int C)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b teste_produto_escalar} ({\b Complex} *mat, {\b Complex} *mat2, int L, int C, {\b Complex} *resultado)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b produtoMatricial} ({\b Complex} *mat1, {\b Complex} *mat2, {\b Complex} *result, int L, int C)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b teste_todos} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Fun\'E7\'F5es\par
+\pard\plain 
+{\xe \v conjugado\:matrizes.c}
+{\xe \v matrizes.c\:conjugado}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b Complex} conjugado ({\b Complex}  {\i c})}}
+\par
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 30                              \{\par
+31     Complex resultado;\par
+32     resultado.Re = c.Re;\par
+33     resultado.Im = -c.Im; {\cf20 // troca o sinal da parte imagin\'E1ria}\par
+34     {\cf19 return} resultado;\par
+35 \}\par
+}
+}
+{\xe \v impC\:matrizes.c}
+{\xe \v matrizes.c\:impC}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void impC ({\b Complex}  {\i c})}}
+\par
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 12                     \{\par
+13     printf({\cf22 "%.1f"}, c.Re);\par
+14     {\cf19 if} (c.Im >= 0) \{\par
+15         printf({\cf22 " + %.1fi"}, c.Im);\par
+16     \} {\cf19 else} \{\par
+17         printf({\cf22 " - %.1fi"}, -c.Im);\par
+18     \}\par
+19 \}\par
+}
+}
+{\xe \v main\:matrizes.c}
+{\xe \v matrizes.c\:main}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main ()}}
+\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 199            \{\par
+200 {\cf18 int} i, j;\par
+201 {\cf18 int} escolha;\par
+202 {\cf18 int} L = 3;\par
+203 {\cf18 int} C = 3;\par
+204 \par
+205 Complex *mat = (Complex *)malloc(L * C * {\cf17 sizeof}(Complex));\par
+206 Complex *mat2 = (Complex *)malloc(L * C * {\cf17 sizeof}(Complex));\par
+207 Complex *result = (Complex *)malloc(L * C * {\cf17 sizeof}(Complex));\par
+208 \par
+209     {\cf19 for} ( i = 0; i < L; i++) \{\par
+210         {\cf19 for} ( j = 0; j < C; j++) \{\par
+211             *(mat + i * C + j) = (Complex)\{i + j, i - j\};\par
+212             *(mat2 + i * C + j) = (Complex)\{i - j, i + j\};\par
+213         \}\}\par
+214 \par
+215     printf({\cf22 "\\n"});\par
+216     printf({\cf22 "\\tEscolha a manipulacao matricial de 3x3 que deseja executar:\\n"});\par
+217     printf({\cf22 "\\t 1. Matriz trasposta \\n"});\par
+218     printf({\cf22 "\\t 2. Matriz conjugada \\n"});\par
+219     printf({\cf22 "\\t 3. Matriz hermitiana \\n"});\par
+220     printf({\cf22 "\\t 4. Soma de matrizes  \\n"});\par
+221     printf({\cf22 "\\t 5. Subtracao de matrizes \\n"});\par
+222     printf({\cf22 "\\t 6. Produto escalar \\n"});\par
+223     printf({\cf22 "\\t 7. Produto matricial \\n"});\par
+224     printf({\cf22 "\\n"});\par
+225 \par
+226     printf({\cf22 "\\tMatriz original 3x3:\\n"});\par
+227         printComplexMatrix(mat, L, C);\par
+228         printf({\cf22 "\\n"});\par
+229         teste_transposta(mat, L, C);\par
+230 \par
+231     printf({\cf22 "\\tMatriz transposta:\\n"});\par
+232             printComplexMatrix(mat, C, L);\par
+233             free(mat);\par
+234     printf({\cf22 "\\n"});\par
+235     printf({\cf22 "\\tMatriz original 3x3:\\n"});\par
+236         printComplexMatrix(mat, L, C);\par
+237         printf({\cf22 "\\n"});\par
+238         teste_conjugada(mat, L, C);\par
+239     \par
+240     printf({\cf22 "\\tMatriz conjugada:\\n"});\par
+241         printComplexMatrix(mat, L, C);\par
+242         free(mat);\par
+243 \par
+244     \par
+245     printf({\cf22 "\\tMatriz original 3x3:\\n"});\par
+246         printComplexMatrix(mat, L, C);\par
+247         printf({\cf22 "\\n"});\par
+248     printf({\cf22 "\\tMatriz Hermitiana 3x3:\\n"});\par
+249         teste_hermitiana(mat,result, L, C);\par
+250         printComplexMatrix(result, L, C);\par
+251         printf({\cf22 "\\n"});\par
+252     \par
+253     \par
+254     printf({\cf22 "\\tMatriz original 3x3:\\n"});\par
+255             printComplexMatrix(mat, L, C);\par
+256             printf({\cf22 "\\n"});\par
+257     printf({\cf22 "\\tSegunda matriz 3x3 :\\n"});\par
+258             printComplexMatrix(mat2, L, C);\par
+259             teste_soma(mat, mat2, result, L, C);\par
+260     printf({\cf22 "\\tMatriz soma:\\n"});\par
+261             printComplexMatrix(result, L, C);\par
+262             free(result);\par
+263             free(mat);\par
+264             free(mat2);\par
+265 \par
+266     \par
+267     printf({\cf22 "\\tMatriz original 3x3:\\n"});\par
+268             printComplexMatrix(mat, L, C);\par
+269             printf({\cf22 "\\n"});\par
+270             \par
+271     printf({\cf22 "\\tSegunda matriz 3x3\\n"});\par
+272             printComplexMatrix(mat2, L, C);\par
+273             teste_subtracao(mat, mat2, result, L, C);\par
+274     printf({\cf22 "\\tMatriz subtracao:\\n"});\par
+275             printComplexMatrix(result, L, C);\par
+276             free(result);\par
+277             free(mat);\par
+278             free(mat2);\par
+279     \par
+280 \par
+281     printf({\cf22 "\\tMatriz original 3x3:\\n"});\par
+282             printComplexMatrix(mat, L, C);\par
+283             printf({\cf22 "\\n"});\par
+284     printf({\cf22 "\\tSegunda matriz 3x3\\n"});\par
+285             printComplexMatrix(mat2, L, C);\par
+286     Complex resultado;\par
+287     teste_produto_escalar(mat, mat2, L, C, &resultado);\par
+288             printf({\cf22 "Produto escalar: "});\par
+289             impC(resultado);\par
+290             printf({\cf22 "\\n"});\par
+291     \par
+292     printf({\cf22 "\\tMatriz original 3x3:\\n"});\par
+293             printComplexMatrix(mat, L, C);\par
+294             printf({\cf22 "\\n"});\par
+295     printf({\cf22 "\\tSegunda matriz 3x3\\n"});\par
+296             printComplexMatrix(mat2, L, C);\par
+297             produtoMatricial(mat, mat2, result, L, C);\par
+298     printf({\cf22 "\\tProduto matricial:\\n"});\par
+299             printComplexMatrix(result, L, C);\par
+300             free(result);\par
+301             free(result);\par
+302             free(mat);\par
+303             free(mat2);\par
+304 \par
+305 \par
+306 \par
+307 {\cf19 return} 0;\par
+308 \par
+309 \}\par
+}
+}
+{\xe \v printComplexMatrix\:matrizes.c}
+{\xe \v matrizes.c\:printComplexMatrix}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void printComplexMatrix ({\b Complex} *  {\i matrix}, int  {\i L}, int  {\i C})}}
+\par
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 21                                                        \{\par
+22     {\cf18 int} i, j;\par
+23     {\cf19 for} (i = 0; i < L; i++) \{\par
+24         {\cf19 for} (j = 0; j < C; j++) \{\par
+25             impC(matrix[i * C + j]);\par
+26             printf({\cf22 "\\t"});\par
+27         \}\par
+28         printf({\cf22 "\\n"});\par
+29     \}\}{\cf20 // Fun\'E7\'E3o para imprimir uma matriz complexa}\par
+}
+}
+{\xe \v produtoMatricial\:matrizes.c}
+{\xe \v matrizes.c\:produtoMatricial}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void produtoMatricial ({\b Complex} *  {\i mat1}, {\b Complex} *  {\i mat2}, {\b Complex} *  {\i result}, int  {\i L}, int  {\i C})}}
+\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 103                                                                                    \{\par
+104     {\cf18 int} i, j, k;\par
+105     {\cf19 for} (i = 0; i < L; i++) \{\par
+106         {\cf19 for} (j = 0; j < C; j++) \{\par
+107             result[i * C + j].Re = 0;\par
+108             result[i * C + j].Im = 0;\par
+109             {\cf19 for} (k = 0; k < C; k++) \{\par
+110                 Complex elem1 = mat1[i * C + k];\par
+111                 Complex elem2 = mat2[k * C + j];\par
+112                 Complex prod = \{elem1.Re * elem2.Re - elem1.Im * elem2.Im, elem1.Re * elem2.Im + elem1.Im * elem2.Re\};\par
+113                 result[i * C + j].Re += prod.Re;\par
+114                 result[i * C + j].Im += prod.Im;\par
+115             \}\par
+116         \}\par
+117     \}\par
+118 \}\par
+}
+}
+{\xe \v teste_conjugada\:matrizes.c}
+{\xe \v matrizes.c\:teste_conjugada}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void teste_conjugada ({\b Complex} *  {\i mat}, int  {\i L}, int  {\i C})}}
+\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 48                                                  \{\par
+49     {\cf18 int} i, j;\par
+50     {\cf19 for} (i = 0; i < L; i++) \{\par
+51         {\cf19 for} (j = 0; j < C; j++) \{\par
+52             mat[i * C + j] = conjugado(mat[i * C + j]);\par
+53         \}\par
+54     \}\par
+55 \}\par
+}
+}
+{\xe \v teste_hermitiana\:matrizes.c}
+{\xe \v matrizes.c\:teste_hermitiana}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void teste_hermitiana ({\b Complex} *  {\i mat}, {\b Complex} *  {\i result}, int  {\i L}, int  {\i C})}}
+\par
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 57                                                                   \{\par
+58     {\cf18 int} i, j;\par
+59     {\cf19 for} (i = 0; i < L; i++) \{\par
+60         {\cf19 for} (j = 0; j < C; j++) \{\par
+61             result[i * C + j] = conjugado(mat[j * C + i]);\par
+62         \}\par
+63     \}\par
+64 \}\par
+}
+}
+{\xe \v teste_produto_escalar\:matrizes.c}
+{\xe \v matrizes.c\:teste_produto_escalar}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void teste_produto_escalar ({\b Complex} *  {\i mat}, {\b Complex} *  {\i mat2}, int  {\i L}, int  {\i C}, {\b Complex} *  {\i resultado})}}
+\par
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 88                                                                                           \{\par
+89     resultado->Re = 0;\par
+90     resultado->Im = 0;\par
+91     {\cf18 int} i, j;\par
+92     {\cf19 for} (i = 0; i < L; i++) \{\par
+93         {\cf19 for} (j = 0; j < C; j++) \{\par
+94             Complex elem1 = mat[i * C + j];\par
+95             Complex elem2 = mat2[i * C + j];\par
+96             Complex prod = \{elem1.Re * elem2.Re - elem1.Im * elem2.Im, elem1.Re * elem2.Im + elem1.Im * elem2.Re\};\par
+97             resultado->Re += prod.Re;\par
+98             resultado->Im += prod.Im;\par
+99         \}\par
+100     \}\par
+101 \}\par
+}
+}
+{\xe \v teste_soma\:matrizes.c}
+{\xe \v matrizes.c\:teste_soma}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void teste_soma ({\b Complex} *  {\i mat}, {\b Complex} *  {\i mat2}, {\b Complex} *  {\i result}, int  {\i L}, int  {\i C})}}
+\par
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 66                                                                             \{\par
+67     {\cf18 int} i, j;\par
+68     {\cf19 for} (i = 0; i < L; i++) \{\par
+69         {\cf19 for} (j = 0; j < C; j++) \{\par
+70         result[i * C + j].Re = mat[i * C + j].Re + mat2[i * C + j].Re; {\cf20 // Realiza a Soma da parte Real}\par
+71         result[i * C + j].Im = mat[i * C + j].Im + mat2[i * C + j].Im; {\cf20 // Realiza a Soma da parte imagin\'E1ria}\par
+72         \}\par
+73     \}\par
+74 \}\par
+}
+}
+{\xe \v teste_subtracao\:matrizes.c}
+{\xe \v matrizes.c\:teste_subtracao}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void teste_subtracao ({\b Complex} *  {\i mat}, {\b Complex} *  {\i mat2}, {\b Complex} *  {\i result}, int  {\i L}, int  {\i C})}}
+\par
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 77                                                                                  \{\par
+78     {\cf18 int} i, j;\par
+79     {\cf19 for} (i = 0; i < L; i++) \{\par
+80         {\cf19 for} (j = 0; j < C; j++) \{\par
+81         result[i * C + j].Re = mat[i * C + j].Re - mat2[i * C + j].Re; {\cf20 // Realiza a Soma da parte Real}\par
+82         result[i * C + j].Im = mat[i * C + j].Im - mat2[i * C + j].Im; {\cf20 // Realiza a Soma da parte imagin\'E1ria}\par
+83         \}\par
+84     \}\par
+85 \}\par
+}
+}
+{\xe \v teste_todos\:matrizes.c}
+{\xe \v matrizes.c\:teste_todos}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void teste_todos ()}}
+\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 120                   \{\par
+121     {\cf18 int} L = 3;\par
+122     {\cf18 int} C = 3;\par
+123 \par
+124     Complex *mat = (Complex *)malloc(L * C * {\cf17 sizeof}(Complex));\par
+125     Complex *mat2 = (Complex *)malloc(L * C * {\cf17 sizeof}(Complex));\par
+126     Complex *result = (Complex *)malloc(L * C * {\cf17 sizeof}(Complex));\par
+127 \par
+128     {\cf18 int} i, j;\par
+129     {\cf19 for} (i = 0; i < L; i++) \{\par
+130         {\cf19 for} (j = 0; j < C; j++) \{\par
+131             *(mat + i * C + j) = (Complex)\{i + j, i - j\};\par
+132             *(mat2 + i * C + j) = (Complex)\{i - j, i + j\};\par
+133         \}\par
+134     \}\par
+135 \par
+136     printf({\cf22 "Matriz original 3x3:\\n"});\par
+137     printComplexMatrix(mat, L, C);\par
+138     printf({\cf22 "\\n"});\par
+139 \par
+140     printf({\cf22 "Segunda matriz 3x3:\\n"});\par
+141     printComplexMatrix(mat2, L, C);\par
+142     printf({\cf22 "\\n"});\par
+143     printf({\cf22 "1. Matriz transposta\\n"});\par
+144     teste_transposta(mat, L, C);\par
+145     printf({\cf22 "\\n"});\par
+146     printf({\cf22 "Matriz transposta:\\n"});\par
+147     printComplexMatrix(mat, C, L);\par
+148     printf({\cf22 "\\n"});\par
+149     free(mat);\par
+150     printf({\cf22 "2. Matriz conjugada\\n"});\par
+151     teste_conjugada(mat, L, C);\par
+152     printf({\cf22 "\\n"});\par
+153     printf({\cf22 "Matriz conjugada:\\n"});\par
+154     printComplexMatrix(mat, L, C);\par
+155     printf({\cf22 "\\n"});\par
+156     free(mat);\par
+157 \par
+158     printf({\cf22 "3. Matriz hermitiana\\n"});\par
+159     teste_hermitiana(mat,result, L, C);\par
+160     printComplexMatrix(result, L, C);\par
+161     printf({\cf22 "\\n"});\par
+162     free(mat);\par
+163 \par
+164     printf({\cf22 "4. Soma de matrizes\\n"});\par
+165     teste_soma(mat, mat2, result, L, C);\par
+166     printf({\cf22 "Matriz soma:\\n"});\par
+167     printComplexMatrix(result, L, C);\par
+168     printf({\cf22 "\\n"});\par
+169 \par
+170     printf({\cf22 "5. Subtracao de matrizes\\n"});\par
+171     teste_subtracao(mat, mat2, result, L, C);\par
+172     printf({\cf22 "Matriz subtracao:\\n"});\par
+173     printComplexMatrix(result, L, C);\par
+174     printf({\cf22 "\\n"});\par
+175 \par
+176     printf({\cf22 "6. Produto escalar\\n"});\par
+177     printf({\cf22 "Segunda matriz 3x3:\\n"});\par
+178     printComplexMatrix(mat2, L, C);\par
+179     printf({\cf22 "\\n"});\par
+180     Complex resultado;\par
+181     teste_produto_escalar(mat, mat2, L, C, &resultado);\par
+182     printf({\cf22 "Produto escalar: "});\par
+183     impC(resultado);\par
+184     printf({\cf22 "\\n"});\par
+185 \par
+186     printf({\cf22 "7. Produto matricial\\n"});\par
+187     printf({\cf22 "Segunda matriz 3x3:\\n"});\par
+188     printComplexMatrix(mat2, L, C);\par
+189     produtoMatricial(mat, mat2, result, L, C);\par
+190     printf({\cf22 "Produto matricial:\\n"});\par
+191     printComplexMatrix(result, L, C);\par
+192     printf({\cf22 "\\n"});\par
+193 \par
+194     free(result);\par
+195     free(mat);\par
+196     free(mat2);\par
+197 \}\par
+}
+}
+{\xe \v teste_transposta\:matrizes.c}
+{\xe \v matrizes.c\:teste_transposta}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void teste_transposta ({\b Complex} *  {\i mat}, int  {\i L}, int  {\i C})}}
+\par
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 37                                                   \{\par
+38     {\cf18 int} i,j;\par
+39     {\cf19 for} ( i = 0; i < L; i++) \{\par
+40         {\cf19 for} ( j = i + 1; j < C; j++) \{\par
+41             Complex temp = *(mat + i * C + j);\par
+42             *(mat + i * C + j) = *(mat + j * C + i);\par
+43             *(mat + j * C + i) = temp;\par
+44         \}\par
+45     \}\par
+46 \}\par
+}
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia do Arquivo C:/Users/leona/OneDrive/Documentos/testeprojetos2/matrizes.h\par \pard\plain 
+{\tc\tcl2 \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/matrizes.h}
+{\xe \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/matrizes.h}
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+C:/Users/leona/OneDrive/Documentos/testeprojetos2/matrizes.h\par \pard\plain 
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+Ir para a documenta\'E7\'E3o desse arquivo.{
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 1 \par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Refer\'EAncia do Arquivo C:/Users/leona/OneDrive/Documentos/testeprojetos2/README.md\par \pard\plain 
+{\tc\tcl2 \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/README.md}
+{\xe \v C:/Users/leona/OneDrive/Documentos/testeprojetos2/README.md}
+{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Sum\'E1rio\par 
+\pard\plain 
+{\tc \v Sum\'E1rio}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}
