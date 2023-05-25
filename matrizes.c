@@ -167,9 +167,9 @@ void teste_todos(){
     printComplexMatrix(result, L, C);
     printf("\n");
 
-    printf("5. Subtração de matrizes\n");
+    printf("5. Subtracao de matrizes\n");
     teste_subtracao(mat, mat2, result, L, C);
-    printf("Matriz subtração:\n");
+    printf("Matriz subtracao:\n");
     printComplexMatrix(result, L, C);
     printf("\n");
 
@@ -213,116 +213,94 @@ Complex *result = (Complex *)malloc(L * C * sizeof(Complex));
         }}
 
     printf("\n");
-    printf("Escolha a manipulação matricial de 3x3 que deseja executar:\n");
-    printf("1. Matriz trasposta \n");
-    printf("2. Matriz conjugada \n");
-    printf("3. Matriz hermitiana \n");
-    printf("4. Soma de matrizes  \n");
-    printf("5. Subtração de matrizes \n");
-    printf("6. Produto escalar \n");
-    printf("7. Produto matricial \n");
-    printf("8. Todas \n");
-    printf("Escolha: ");
-    scanf("%d", &escolha);
+    printf("\tEscolha a manipulacao matricial de 3x3 que deseja executar:\n");
+    printf("\t 1. Matriz trasposta \n");
+    printf("\t 2. Matriz conjugada \n");
+    printf("\t 3. Matriz hermitiana \n");
+    printf("\t 4. Soma de matrizes  \n");
+    printf("\t 5. Subtracao de matrizes \n");
+    printf("\t 6. Produto escalar \n");
+    printf("\t 7. Produto matricial \n");
+    printf("\n");
 
-switch (escolha){
-    case 1:
-    printf("Matriz original 3x3:\n");
+    printf("\tMatriz original 3x3:\n");
         printComplexMatrix(mat, L, C);
         printf("\n");
         teste_transposta(mat, L, C);
-    printf("\nMatriz transposta:\n");
+
+    printf("\tMatriz transposta:\n");
             printComplexMatrix(mat, C, L);
             free(mat);
-    break;
-    case 2:
-    printf("Matriz original 3x3:\n");
+    printf("\n");
+    printf("\tMatriz original 3x3:\n");
         printComplexMatrix(mat, L, C);
         printf("\n");
         teste_conjugada(mat, L, C);
-    printf("\nMatriz conjugada:\n");
+    
+    printf("\tMatriz conjugada:\n");
         printComplexMatrix(mat, L, C);
         free(mat);
-    break;
 
-    case 3:
-    printf("Matriz original 3x3:\n");
+    
+    printf("\tMatriz original 3x3:\n");
         printComplexMatrix(mat, L, C);
         printf("\n");
-    printf("Matriz Hermitiana 3x3:\n");
+    printf("\tMatriz Hermitiana 3x3:\n");
         teste_hermitiana(mat,result, L, C);
         printComplexMatrix(result, L, C);
         printf("\n");
-    break;
-    break;
-    case 4:
-    printf("Matriz original 3x3:\n");
+    
+    
+    printf("\tMatriz original 3x3:\n");
             printComplexMatrix(mat, L, C);
             printf("\n");
-    printf("Segunda matriz 3x3 :\n");
+    printf("\tSegunda matriz 3x3 :\n");
             printComplexMatrix(mat2, L, C);
-
             teste_soma(mat, mat2, result, L, C);
-    printf("\nMatriz soma:\n");
+    printf("\tMatriz soma:\n");
             printComplexMatrix(result, L, C);
             free(result);
             free(mat);
             free(mat2);
-    break;
 
-    case 5:
-    printf("Matriz original 3x3:\n");
+    
+    printf("\tMatriz original 3x3:\n");
             printComplexMatrix(mat, L, C);
             printf("\n");
-    printf("Segunda matriz 3x3");
+            
+    printf("\tSegunda matriz 3x3\n");
             printComplexMatrix(mat2, L, C);
             teste_subtracao(mat, mat2, result, L, C);
-    printf("\nMatriz subtração:\n");
+    printf("\tMatriz subtracao:\n");
             printComplexMatrix(result, L, C);
             free(result);
             free(mat);
             free(mat2);
+    
 
-    break;
-    case 6:
-
-    printf("Matriz original 3x3:\n");
+    printf("\tMatriz original 3x3:\n");
             printComplexMatrix(mat, L, C);
             printf("\n");
-    printf("Segunda matriz 3x3");
+    printf("\tSegunda matriz 3x3\n");
             printComplexMatrix(mat2, L, C);
     Complex resultado;
     teste_produto_escalar(mat, mat2, L, C, &resultado);
-            printf("\nProduto escalar: ");
+            printf("Produto escalar: ");
             impC(resultado);
             printf("\n");
-
-    break;
-    case 7:
-    printf("Matriz original 3x3:\n");
+    
+    printf("\tMatriz original 3x3:\n");
             printComplexMatrix(mat, L, C);
             printf("\n");
-    printf("Segunda matriz 3x3");
+    printf("\tSegunda matriz 3x3\n");
             printComplexMatrix(mat2, L, C);
             produtoMatricial(mat, mat2, result, L, C);
-    printf("\nProduto matricial:\n");
+    printf("\tProduto matricial:\n");
             printComplexMatrix(result, L, C);
             free(result);
             free(result);
             free(mat);
             free(mat2);
-
-    break;
-    case 8:
-    teste_todos();
-
-    break;
-
-    default:
-    printf("Opção inválida!\n");
-    break;
-
-}
 
 
 
