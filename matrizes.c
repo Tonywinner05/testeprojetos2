@@ -2,12 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <complex.h>
+#include <gsl/gsl_matrix.h>
+#include <gsl/gsl_linalg.h>
 
 
 typedef struct {
     double Re;
     double Im;
 } Complex;
+
 
 void impC(Complex c){
     printf("%.1f", c.Re);
