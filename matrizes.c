@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <complex.h>
+#include <gsl/gsl_vector.h>
 #include <gsl/gsl_matrix.h>
 #include <gsl/gsl_linalg.h>
 
@@ -20,6 +21,7 @@ void impC(Complex c){
         printf(" - %.1fi", -c.Im);
     }
 }
+
 // fun√ß√£o para imprimir a matriz
 void printComplexMatrix(Complex *matrix, int L, int C) {
     int i, j;
@@ -29,13 +31,115 @@ void printComplexMatrix(Complex *matrix, int L, int C) {
             printf("\t");
         }
         printf("\n");
-    }}// Fun√ß√£o para imprimir uma matriz complexa
+    }
+}
+// Fun√ß√£o para imprimir uma matriz complexa
 Complex conjugado(Complex c) {
     Complex resultado;
     resultado.Re = c.Re;
     resultado.Im = -c.Im; // troca o sinal da parte imagin√°ria
     return resultado;
 }
+void calc_svd(Complex *mat, int L, int C, Complex **U, Complex **S, Complex **V) {
+    gsl_matrix_complex *A = gsl_matrix_complex_alloc(L, C);
+
+    // Preenche a matriz A com os valores da matriz de entrada
+    int i, j;
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < C; j++) {
+            gsl_complex z = gsl_complex_rect(mat[i * C + j].Re, mat[i * C + j].Im);
+            gsl_matrix_complex_set(A, i, j, z);
+        }
+    }
+
+    // Aloca espaÁo para as matrizes U, S e V
+    gsl_matrix_complex *U_gsl = gsl_matrix_complex_alloc(L, L);
+    gsl_vector_complex *S_gsl = gsl_vector_complex_alloc(C);
+    gsl_matrix_complex *V_gsl = gsl_matrix_complex_alloc(C, C);
+
+    // Calcula a SVD usando a biblioteca GSL
+    gsl_vector *work = gsl_vector_alloc(C);
+    gsl_linalg_SV_decomp(A, V_gsl, S_gsl, work);
+    gsl_linalg_SV_decomp_U(A, U_gsl, S_gsl, V_gsl, work);
+
+    // Copia os valores das matrizes U, S e V de volta para as estruturas Complex
+    *U = (Complex *)malloc(L * L * sizeof(Complex));
+    *S = (Complex *)malloc(C * sizeof(Complex));
+    *V = (Complex *)malloc(C * C * sizeof(Complex));
+
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < L; j++) {
+            gsl_complex z = gsl_matrix_complex_get(U_gsl, i, j);
+            (*U)[i * L + j].Re = GSL_REAL(z);
+            (*U)[i * L + j].Im = GSL_IMAG(z);
+        }
+    }
+
+    for (i = 0; i < C; i++) {
+        gsl_complex z = gsl_vector_complex_get(S_gsl, i);
+        (*S)[i].Re = GSL_REAL(z);
+        (*S)[i].Im = GSL_IMAG(z);
+    }
+
+    for (i = 0; i < C; i++) {
+        for (j = 0; j < C; j++) {
+            gsl_complex z = gsl_matrix_complex_get(V_gsl, i, j);
+            (*V)[i * C + j].Re = GSL_REAL(z);
+            (*V)[i * C + j].Im = GSL_IMAG(z);
+        }
+    }
+
+    // Libera a memÛria alocada
+    gsl_matrix_complex_free(A);
+    gsl_matrix_complex_free(U_gsl);
+    gsl_vector_complex_free(S_gsl);
+    gsl_matrix_complex_free(V_gsl);
+    gsl_vector_free(work);
+}
+
+void teste_calc_svd(int L, int C) {
+    Complex *mat = (Complex *)malloc(L * C * sizeof(Complex));
+    Complex *U, *S, *V;
+
+    // Gera a matriz de entrada aleatoriamente
+    int i, j;
+    for (i = 0; i < L; i++) {
+        for (j = 0; j < C; j++) {
+            mat[i * C + j] = (Complex){(double)rand() / RAND_MAX, (double)rand() / RAND_MAX};
+        }
+    }
+
+    printf("Matriz original %dx%d:\n", L, C);
+    printComplexMatrix(mat, L, C);
+    printf("\n");
+
+    printf("Realizando c·lculo da SVD...\n\n");
+
+    calc_svd(mat, L, C, &U, &S, &V);
+
+    printf("Matriz U:\n");
+    printComplexMatrix(U, L, L);
+    printf("\n");
+
+    printf("Vetor S:\n");
+    printComplexMatrix(S, 1, C);
+    printf("\n");
+
+    printf("Matriz V:\n");
+    printComplexMatrix(V, C, C);
+    printf("\n");
+
+    // Libera a memÛria alocada
+    free(mat);
+    free(U);
+    free(S);
+    free(V);
+}
+
+
+
+
+
 // Matriz Transposta
 void teste_transposta(Complex *mat, int L, int C) {
 	int i,j;
@@ -200,8 +304,25 @@ void teste_todos(){
 }
 
 int main() {
+	srand(time(NULL));
+
+    printf("Test Case 1: Matriz 3x2\n");
+    teste_calc_svd(3, 2);
+    printf("\n");
+
+    printf("Test Case 2: Matriz 4x4\n");
+    teste_calc_svd(4, 4);
+    printf("\n");
+
+    printf("Test Case 3: Matriz 6x5\n");
+    teste_calc_svd(6, 5);
+    printf("\n");
+
+    printf("Test Case 4: Matriz 5x6 (Complexa)\n");
+    teste_calc_svd(5, 6);
+    printf("\n");
+
 int i, j;
-int escolha;
 int L = 3;
 int C = 3;
 
@@ -216,7 +337,6 @@ Complex *result = (Complex *)malloc(L * C * sizeof(Complex));
         }}
 
     printf("\n");
-    printf("\tEscolha a manipulacao matricial de 3x3 que deseja executar:\n");
     printf("\t 1. Matriz trasposta \n");
     printf("\t 2. Matriz conjugada \n");
     printf("\t 3. Matriz hermitiana \n");
@@ -239,12 +359,12 @@ Complex *result = (Complex *)malloc(L * C * sizeof(Complex));
         printComplexMatrix(mat, L, C);
         printf("\n");
         teste_conjugada(mat, L, C);
-    
+
     printf("\tMatriz conjugada:\n");
         printComplexMatrix(mat, L, C);
         free(mat);
 
-    
+
     printf("\tMatriz original 3x3:\n");
         printComplexMatrix(mat, L, C);
         printf("\n");
@@ -252,8 +372,8 @@ Complex *result = (Complex *)malloc(L * C * sizeof(Complex));
         teste_hermitiana(mat,result, L, C);
         printComplexMatrix(result, L, C);
         printf("\n");
-    
-    
+
+
     printf("\tMatriz original 3x3:\n");
             printComplexMatrix(mat, L, C);
             printf("\n");
@@ -266,11 +386,11 @@ Complex *result = (Complex *)malloc(L * C * sizeof(Complex));
             free(mat);
             free(mat2);
 
-    
+
     printf("\tMatriz original 3x3:\n");
             printComplexMatrix(mat, L, C);
             printf("\n");
-            
+
     printf("\tSegunda matriz 3x3\n");
             printComplexMatrix(mat2, L, C);
             teste_subtracao(mat, mat2, result, L, C);
@@ -279,7 +399,7 @@ Complex *result = (Complex *)malloc(L * C * sizeof(Complex));
             free(result);
             free(mat);
             free(mat2);
-    
+
 
     printf("\tMatriz original 3x3:\n");
             printComplexMatrix(mat, L, C);
@@ -291,7 +411,7 @@ Complex *result = (Complex *)malloc(L * C * sizeof(Complex));
             printf("Produto escalar: ");
             impC(resultado);
             printf("\n");
-    
+
     printf("\tMatriz original 3x3:\n");
             printComplexMatrix(mat, L, C);
             printf("\n");
